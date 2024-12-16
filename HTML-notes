@@ -1,0 +1,11 @@
+<meta charset="UTF-8"> ---> encode and converts to machine level language
+
+Ctrl+Spc for snippets
+.
+By default the is some margin of 16 px between two <p> tags
+
+  Check about <label> tags
+
+  (<label></label>) for="" should relate to input id="" needs to be the same inside double quotes.
+
+  <form action="mailto:sumit.maharjan10@gmail.com" method="post"></form>
