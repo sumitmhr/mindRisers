@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/scrollreveal"></script>
     <style>
       * {
         margin: 0;
@@ -71,6 +72,19 @@
         background-color: black;
         color: white;
       }
+
+      .learn-btn {
+        color: blue;
+        cursor: pointer;
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        transition: all 100ms ease-in 0s;
+      }
+
+      .learn-btn:hover {
+        gap: 12px;
+      }
     </style>
   </head>
 
@@ -105,7 +119,6 @@
     </header>
 
 
-
     <main>
 
 
@@ -122,6 +135,20 @@
 
       </section>
 
+      <section class="products">
+        <div class="product">
+          <img src="assets/images/card1.png" alt="">
+          <h2>New Surface Pro 7</h2>
+          <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7 to put her plans into play. </p>
+
+          <div class="learn-btn">
+            <h4>LEARN MORE</h4>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+        </div>
+      </section>
+
 
 
 
@@ -132,7 +159,26 @@
     <footer></footer>
 
 
+    <script>
+      const rev = ScrollReveal({
+        delay: 200,
+        duration: 500,
+        distance: '500px',
+      });
+      rev.reveal('.left-part', {
+        origin: 'left'
+      });
 
+      rev.reveal('.right-part', {
+        origin: 'right'
+      });
+      rev.reveal('.btn', {
+        origin: 'top',
+        distance: '20px',
+        duration: 700
+      });
+
+    </script>
 
 
   </body>
