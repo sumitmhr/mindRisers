@@ -5,71 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+
       }
 
       body {
-        padding: 60px;
+        padding: 20px 50px;
       }
 
-      img {
-        background-color: red;
-        height: 250px;
-        width: 250px;
-        animation: animi 10s ease-in 0s infinite alternate backwards;
-        /* direction fill-mode; */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
       }
 
+      .left-part {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
 
-      @keyframes animi {
-        10% {
-          transform: rotate(40deg);
-        }
+      a {
+        text-decoration: none;
+        color: rgb(43, 39, 39);
+        padding-right: 15px;
+      }
 
-        30% {
-          transform: rotate(60deg);
-        }
-
-        50% {
-          transform: rotate(180deg);
-        }
-
-        70% {
-          transform: rotate(200deg);
-          border-radius: 50%;
-        }
-
-        90% {
-          transform: rotate(300deg);
-        }
-
-        100% {
-          transform: rotate(360deg);
-        }
+      a:hover {
+        text-decoration: underline 1px solid;
+        text-underline-offset: 5px;
       }
     </style>
   </head>
 
   <body>
 
-    <div class="bx">
-      <img
-        src="https://plus.unsplash.com/premium_photo-1669833443895-ce69a383fc64?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8"
-        alt="">
-    </div>
+
+    <header>
+
+      <div class="left-part">
+        <div class="logo">
+          <img style="height: 23px;" src="assets/images/logo.png" alt="">
+        </div>
+
+        <nav>
+          <a href="">Office</a>
+          <a href="">Windows</a>
+          <a href="">Surface</a>
+          <a href="">Xbox</a>
+          <a href="">Deals</a>
+          <a href="">Support</a>
+        </nav>
+
+      </div>
+
+
+      <div class="right-part">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        &nbsp;&nbsp;&nbsp;
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+
+    </header>
 
 
 
+    <main></main>
 
 
-
-
-
+    <footer></footer>
 
 
 
