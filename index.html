@@ -85,6 +85,48 @@
       .learn-btn:hover {
         gap: 12px;
       }
+
+      img {
+        width: 100%;
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .product p {
+        margin: 15px 0;
+      }
+
+      @media(max-width:1024px) {
+        .products {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media(max-width:768px) {
+        .right-part {
+          display: none;
+        }
+
+        .products {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+      }
+
+      @media(max-width:640px) {
+        .left-part {
+          flex-direction: column;
+        }
+
+        .products {
+          grid-template-columns: 1fr;
+        }
+
+      }
     </style>
   </head>
 
@@ -95,7 +137,7 @@
 
       <div class="left-part">
         <div class="logo">
-          <img style="height: 23px;" src="assets/images/logo.png" alt="">
+          <img style="height: 23px; width: 110px;" src="assets/images/logo.png" alt="">
         </div>
 
         <nav>
@@ -136,6 +178,7 @@
       </section>
 
       <section class="products">
+
         <div class="product">
           <img src="assets/images/card1.png" alt="">
           <h2>New Surface Pro 7</h2>
@@ -147,6 +190,42 @@
           </div>
 
         </div>
+        <div class="product">
+          <img src="assets/images/card2.png" alt="">
+          <h2>New Surface Pro 7</h2>
+          <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7 to put her plans into play. </p>
+
+          <div class="learn-btn">
+            <h4>LEARN MORE</h4>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+        </div>
+        <div class="product">
+          <img src="assets/images/card3.png" alt="">
+          <h2>New Surface Pro 7</h2>
+          <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7 to put her plans into play. </p>
+
+          <div class="learn-btn">
+            <h4>LEARN MORE</h4>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+        </div>
+        <div class="product">
+          <img src="assets/images/card4.png" alt="">
+          <h2>New Surface Pro 7</h2>
+          <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7 to put her plans into play. </p>
+
+          <div class="learn-btn">
+            <h4>LEARN MORE</h4>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+        </div>
+
+
+
       </section>
 
 
@@ -177,6 +256,14 @@
         distance: '20px',
         duration: 700
       });
+
+      rev.reveal('.product', {
+        origin: 'left',
+        distance: '20px',
+        duration: 700,
+        interval: 100
+      });
+
 
     </script>
 
