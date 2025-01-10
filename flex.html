@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    padding: 10px;
+  }
+
+  .item {
+    /* width: 100px; */
+    flex-basis: 200px;
+    /* flex-grow: 1; */
+  }
+
+  .item1 {
+    background-color: red;
+    /* flex-shrink: 2; */
+    /* flex-basis: 100px; */
+    /* align-self: center; */
+  }
+
+  .item2 {
+    background-color: skyblue;
+    /* align-self: flex-end; */
+  }
+
+  .item3 {
+    background-color: mediumseagreen;
+    /* align-self: flex-start; */
+  }
+
+  .item4 {
+    background-color: purple;
+  }
+
+  .item5 {
+    background-color: yellow;
+  }
+
+  .bx {
+    width: 800px;
+    height: 600px;
+    display : flex;
+    border: 1px solid black;
+    /* flex-direction: row-reverse; Direction properties */
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    align-content: start;
+  }
+
+  .b {
+    background-color: red;
+    max-width: 500px;
+  }
+</style>
+
+<body>
+
+  <div class="b">
+    <p>Some Content Here</p>
+  </div>
+
+  <div class="bx">
+    
+    <div class="item item1">
+      <h1>Box-1</h1>
+      <!-- <p>Sumit Maharjan Sumit Maharjan</p> -->
+    </div>
+
+    <div class="item item2">
+      <h1>Box-2</h1>
+    </div>
+
+    <div class="item item3">
+      <h1>Box-3</h1>
+    </div>
+
+    <div class="item item4">
+      <h1>Box-4</h1>
+    </div>
+
+    <div class="item item5">
+      <h1>Box-5</h1>
+    </div>
+
+  </div>
+  
+</body>
+</html>

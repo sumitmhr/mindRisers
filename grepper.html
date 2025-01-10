@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title> 
+		How to Create a Triangle 
+		using CSS clip-path? 
+	</title> 
+
+	<style> 
+		h1 { 
+			color: green; 
+		} 
+
+		h1, 
+		h3 { 
+			text-align: center; 
+		} 
+
+		.container { 
+			position: absolute; 
+			left: 50%; 
+			top: 50%; 
+			transform: translate(-50%, -50%); 
+			width: 300px; 
+			height: 300px; 
+			background-color: green; 
+			clip-path: polygon(0% 0%, 100% 0%, 0% 100%); 
+		} 
+	</style> 
+</head> 
+
+<body> 
+	<h1>GeeksforGeeks</h1> 
+
+	<h3> 
+		How to Create a Triangle using CSS clip-path? 
+	</h3> 
+	<div class="container"></div> 
+</body> 
+
+</html>
