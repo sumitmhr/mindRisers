@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  .budi-box {
+    width: 1600px;
+    height: 800px;
+    background-color: pink;
+    position: relative;
+  }
+
+  .first-main-box {
+    background-color: blue;
+    height: 150px;
+    /* position: relative; */
+  }
+
+  .triangle {
+    background-color: orange;
+    height: 145px;
+    width: 150px;
+    left: 150px;
+    clip-path: polygon(50% 0,100% 100%,0 100%);
+    position: absolute;
+  }
+
+  .circle {
+    background-color: pink;
+    border-radius: 50%;
+    height: 145px;
+    width: 145px;
+    left: 1000px;
+    top: 5px;
+    position: absolute;
+  }
+
+  .right-triangle {
+    background-color: black;
+    position: absolute;
+    height: 145px;
+    width: 150px;
+    right: 150px;
+    top: 5px;
+    clip-path: polygon(0 0, 100% 0,100% 100%);
+  }
+
+  /* .second-main-box  {
+    position: relative;
+  } */
+
+  .pentagon {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    position: absolute;
+    left: 250px;
+    top: 200px;
+    clip-path: polygon(50% 0,100% 40%,80% 100%,20% 100%,0 40%);
+  }
+
+  .sub-first-box  {
+    background-color: white;
+    position: absolute;
+    height: 300px;
+    width: 350px;
+    right: 350px;
+  }
+
+  .sub-main-rectangle {
+    background-color: gray;
+    position: absolute;
+    height: 120px;
+    width: 300px;
+    top: 20px;
+    left: 25px;
+  }
+
+  .sub-sub-rectangle-1  {
+    background-color: skyblue;
+    position: absolute;
+    height: 120px;
+    width: 140px;
+    left: 25px;
+    bottom: 20px;
+  }
+
+  .sub-sub-rectangle-2  {
+    background-color: skyblue;
+    position: absolute;
+    height: 120px;
+    width: 140px;
+    right: 25px;
+    bottom: 20px;
+  }
+
+  .sub-second-box {
+    background-color: yellow;
+    height: 300px;
+    width: 150px;
+    position: absolute;
+    right: 0;
+  }
+
+  .big-box  {
+    background-color: blueviolet; /* bluepurple*/
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    top: 450px;
+  }
+
+  .sub-big-box  {
+    background-color: gray; /* ash */
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: 100px;
+  }
+
+  .sub-small-box  {
+    background-color: green; 
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 100px;
+  }
+
+  .first-small-circle {
+    background-color: green;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 600px;
+    right: 400px;
+  }
+
+  .second-small-circle {
+    background-color: green;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 600px;
+    right: 170px;
+  }
+
+</style>
+<body>
+
+  <div class="budi-box">
+
+    <div class="first-main-box">
+
+      <div class="triangle">
+
+      </div>
+
+      <div class="circle">
+
+      </div>
+
+      <div class="right-triangle">
+
+      </div>
+
+    </div>
+
+    <div class="second-main-box">
+
+      <div class="pentagon">
+
+      </div>
+
+      <div class="sub-first-box">
+
+        <div class="sub-main-rectangle">
+
+        </div>
+
+        <div class="sub-sub-rectangle-1">
+          
+        </div>
+
+        <div class="sub-sub-rectangle-2">
+          
+        </div>
+
+      </div>
+
+      <div class="sub-second-box">
+
+      </div>
+
+      <div class="big-box">
+
+        <div class="sub-big-box">
+
+          <div class="sub-small-box">
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="first-small-circle">
+
+      </div>
+
+      <div class="second-small-circle">
+
+      </div>
+
+    </div>
+
+  </div>
+  
+</body>
+</html>

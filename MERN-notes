@@ -1,0 +1,39 @@
+<meta charset="UTF-8"> ---> encode and converts to machine level language
+
+Ctrl+Spc for snippets
+.
+By default the is some margin of 16 px between two <p> tags
+
+  Check about <label> tags
+
+  (<label></label>) for="" should relate to input id="" needs to be the same inside double quotes.
+
+  <form action="mailto:sumit.maharjan10@gmail.com" method="post"></form>
+
+  <li>Mero name</li>
+
+  See sudo selector
+
+  Stacking card designs use position as absolute and for other designs use position relative.
+
+  for single row of boxes or column use flex and for multiple use grid.
+
+  .item$*5
+
+  justify-content (X-axis) is used for arrangement of content horizontally
+
+  align-items (Y-axis) is used for arrangement of items vertically
+
+  if flex-direction is changed to column then justify-content and align-items properties are altered
+
+  .bx$*8>h1{Box$} is the formula with bx1 to bx8 classes in which Bx1 to Bx8 text are under <h1> tag respectively. 
+
+    hsla is the best color practise to use while making a big project.
+
+    green color template is best for educational purposes.
+
+     <!-- <div class="middle-part">
+        <img style="height: 23px;" src="../assets/images/logo.png" alt="">
+      </div> -->
+
+      

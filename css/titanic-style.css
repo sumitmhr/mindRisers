@@ -1,0 +1,52 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.poster {
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+}
+
+.text-container {
+  padding: 16px;
+  text-align: center;
+}
+
+.text-container h1 {
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.text-container .year {
+  font-size: 16px;
+  font-weight: normal;
+  color: #888;
+  margin-left: 8px;
+}
+
+.text-container p {
+  font-size: 12px;
+  color: #333;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.text-container p strong {
+  color: #000;
+}

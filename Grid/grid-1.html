@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        /* padding-top: 70px; */
+      }
+
+
+      main {
+        height: 400px;
+        background-color: ghostwhite;
+        max-width: 700px;
+        display: grid;
+
+        /* margin: 0 auto; */
+
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .bx1  {
+        background-color: blue;
+        grid-row: span 3;
+      }
+
+      .bx2  {
+        background-color: red;
+        grid-column: span 2;
+      }
+
+      .bx3  {
+        background-color: green;
+      }
+
+      .bx4  {
+        background-color: silver;
+      }
+
+      .bx5  {
+        background-color: yellowgreen;
+      }
+
+      .bx6  {
+        background-color: aqua;
+        grid-row: span 2;
+      }
+
+      .bx7  {
+        background-color: purple;
+      }
+
+      .bx8  {
+        background-color: brown;
+      }
+    </style>
+  </head>
+
+  <body>
+
+
+
+    <main>
+
+      <div class="bx1">
+        <h1>Box1</h1>
+      </div>
+      <div class="bx2">
+        <h1>Box2</h1>
+      </div>
+      <div class="bx3">
+        <h1>Box3</h1>
+      </div>
+      <div class="bx4">
+        <h1>Box4</h1>
+      </div>
+      <div class="bx5">
+        <h1>Box5</h1>
+      </div>
+      <div class="bx6">
+        <h1>Box6</h1>
+      </div>
+      <div class="bx7">
+        <h1>Box7</h1>
+      </div>
+      <div class="bx8">
+        <h1>Box8</h1>
+      </div>
+
+
+    </main>
+
+
+
+
+
+
+  </body>
+
+</html>
