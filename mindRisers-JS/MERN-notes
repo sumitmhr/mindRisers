@@ -1,0 +1,66 @@
+
+1. null ==> it is sure that the value is not there.
+
+2. undefined ==> it is unsure that what the value will be.
+
+3. undefined and null are falsy value
+
+4. zero is falsy value
+
+5. empty string is falsy value
+
+6. when using `${Some logic .....} `, we can use variables with other information inside curly braces like
+let a = 20;
+let b = a % 10 === 0;
+console.log(`${a} is ${b ? 'divisible by 10' : 'not divisible by 10'}`);
+
+7. fat arrow function cannot be called before its making
+
+normal function can be called anywhere in the code.
+
+8. const numbers = [11,22,33,44,55,66,77];
+
+numbers.forEach((n, i) => {
+  console.log(n);
+  console.log(i);
+});
+
+Callback Function in forEach:
+
+=> The function (n, i) => { ... } is the callback function provided to forEach.
+=> This function gets executed once for each element of the array.
+=> The parameters of this callback function are:
+      n: The current element of the array.
+      i: The index of the current element.
+
+9. // find single specific get garna filter mulitple get garna ko lagi
+
+// users male female  tapailai male matrai filter
+// users specific name or id anusar find
+
+10. [.className]>[tag][{Text}] gives:
+
+    <div class = "className"><a href = "">Text</a></div>
+
+11. [tag.className]>ul>li>a>span gives:
+
+    <tag class = "className">
+      <ul>
+        <li><a href = ""><span></span></a></li>
+      </ul>
+    </tag>
+
+12. .inner-header>.container.wide>.wrap>.header-left+.header-center+.header-right gives:
+
+    <div class = "inner-header">
+      <div class = "container wide">
+        <div class = "wrap">
+          <div class = "header-left"></div>
+          <div class = "header-center"></div>
+          <div class = "header-right"></div>
+        </div>
+      </div>
+    </div>
+
+
+
