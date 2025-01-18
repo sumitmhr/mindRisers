@@ -3,6 +3,7 @@ import React from 'react'
 import Practice1 from './practice-1';
 
 import ProgramCard from './components/ProgramCard';
+import App1 from './App1';
 
 const App = () => {
 
@@ -76,6 +77,8 @@ const App = () => {
        author = {'Dmriti Nesteruk'}
        url = {'https://plus.unsplash.com/premium_photo-1682192408471-a7cf432b3fdc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bm9kZXxlbnwwfHwwfHx8MA%3D%3D'}
        />
+
+       <App1 />
 
     </div>
   )
