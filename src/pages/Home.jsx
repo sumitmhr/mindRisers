@@ -1,16 +1,46 @@
+import { Button, Typography } from '@material-tailwind/react'
 import React from 'react'
-import Header from '../components/Header'
+import { useState } from 'react';
+import { TestimonialCard } from '../components/TestimonialCard';
+
+
 
 const Home = () => {
+
+  const [count, setCount] = useState(10);
+
+  const decrement = () => {
+    setCount((prev) => prev - 1);
+    }
+
+  const increment = () => {
+   setCount((prev) => prev + 1);
+   console.log(count);
+  }
+
+  const showEven = count % 2 === 0;
+
   return (
-    <div>
-      <Header />
-      <h1>This is me calling from home</h1>
-      <div>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium aut eius nihil assumenda, consequuntur odio nisi repudiandae tempora velit earum sequi, delectus vitae aperiam asperiores ad consectetur fuga corporis incidunt!
+    <div className='p-5'>
+
+      <Typography variant='h3'>{count}</Typography>
+
+
+      <Button
+        onClick={decrement}
+        disabled={count === 1}
+        size='sm' color='red'>Minus</Button>
+
+      <Button
+        onClick={increment}
+        size='sm' color='light-green'>Plus</Button>
+
+      <div className='mt-5'>
+        {showEven ? <Typography variant='h4'>Even</Typography> : <Typography variant='h4'>Odd</Typography>}
       </div>
+
+
     </div>
-    
   )
 }
 
