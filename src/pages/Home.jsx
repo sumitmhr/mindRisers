@@ -150,7 +150,7 @@ const Home = () => {
 
       <Button
         onClick={addUser}
-        size='sm' color='green'>Random User</Button>
+        size='lg' color='green'>Random User</Button>
 
       {numbers.map((n, i) => {
         return (
