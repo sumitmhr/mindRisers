@@ -12,11 +12,16 @@ const person = {
 //   console.log(this);
 // }
 
+
+// Function as Object Start
+
 // 'this' will be same object
 fullFunc: function() {
   console.log(this.firstName);
   console.log(this.lastName);
 }};
+
+// Function as Object End
 
 person.fullFunc();
 // console.log(`${person.firstName} ${person.lastName}`);
