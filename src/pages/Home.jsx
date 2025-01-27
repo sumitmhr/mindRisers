@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from 'react';
 import { TestimonialCard } from '../components/TestimonialCard';
 import { faker } from '@faker-js/faker';
+import { TableWithStripedRows } from '../components/TableWithStripedRows';
 
 
 
@@ -21,8 +22,15 @@ const Home = () => {
       registeredAt: faker.date.past(),
       }
 
-      console.log(newUser);
+      setUsers((prev) => [...prev, newUser]);
     }
+
+      // const numbers = [
+      //   { id: 1, name: 'one' },
+      //   { id: 2, name: 'two' },
+      // ];
+      // const g = numbers.filter((num) => num.id !== 1);
+      // console.log(g);
 
     const numbers = [11, 22, 33, 44, 55, 66, 77, 88, 99];
 
@@ -152,6 +160,14 @@ const Home = () => {
         onClick={addUser}
         size='lg' color='green'>Random User</Button>
 
+
+        {users.length === 0 && <Typography variant='h6'>please create come users !</Typography>}
+
+
+
+        <TableWithStripedRows users={users} setUsers={setUsers} />
+
+
       {numbers.map((n, i) => {
         return (
         <div key={i}>
@@ -225,6 +241,9 @@ const Home = () => {
           )
         })}
       </div>
+
+      
+
       
 
 
