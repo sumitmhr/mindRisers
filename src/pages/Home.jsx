@@ -39,10 +39,11 @@ const Home = () => {
 
   return (
     <div className='p-4'>
-      {data && data.map((post) => {
+      {data && data.map((post, index) => {
         return <div key={post.id}>
-          <h1>{post.title}</h1>
-          <p>{post.body}</p>
+          <h1>Title {index + 1}  : <br />{post.title}</h1>
+          <br />
+          <p>Body {index + 1} : <br />{post.body}</p><br /><br />
           <hr className='h-10' />
 
         </div>
