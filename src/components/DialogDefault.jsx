@@ -12,7 +12,7 @@ export function DialogDefault({ setUsers, userId }) {
   const handleOpen = () => setOpen((prev) => !prev);
 
   const removeUser = () => {
-    setUsers((prev) => prev.filter((user) => user.userId !== userId));
+    setUsers((prev) => prev.filter((user) => user.userId !== userId)); // This is function to remove user
   }
 
 
