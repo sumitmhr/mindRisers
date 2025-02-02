@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState, useTransition } from 'react'
+import { ListWithAvatar } from '../components/ListWithAvatar';
 
 const Home = () => {
 
@@ -11,7 +12,7 @@ const Home = () => {
 
     startTransition(async () => {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
         setData((prev) => response.data)
       } catch (err) {
         setErr(err.message);
@@ -34,20 +35,13 @@ const Home = () => {
     return <h1>{err}</h1>
   }
 
-
+  console.log(data);
 
 
   return (
     <div className='p-4'>
-      {data && data.map((post, index) => {
-        return <div key={post.id}>
-          <h1>Title {index + 1}  : <br />{post.title}</h1>
-          <br />
-          <p>Body {index + 1} : <br />{post.body}</p><br /><br />
-          <hr className='h-10' />
-
-        </div>
-      })}
+    
+      {data && <ListWithAvatar categories = {data.categories} />}
 
     </div>
   )
