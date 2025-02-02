@@ -1,20 +1,25 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Home = () => {
 
-  const person = {
-    name: 'ram'
-  };
+  const [data, setData] = useState();
 
-  axios.get('https://jsonplaceholder.typicode.com/posts')
-    .then((val) => {
-      console.log(val.data);
-    }).catch((err) => {
+
+  const getData = async () => {
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      // console.log(response.data);
+      setData((prev) => response.data)
+    } catch (err) {
       console.log(err);
-    }).finally(() => {
-      console.log('hello users')
-    });
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
 
   return (
     <div>
