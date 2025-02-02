@@ -4,39 +4,52 @@ import React, { useEffect, useState } from 'react'
 const Home = () => {
 
   const [data, setData] = useState();
+  const [load, setLoad] = useState(false);
+  const [err, setErr] = useState();
 
 
-  const [person, setPerson] = useState();
+
 
   const getData = async () => {
-    setTimeout(() => {
-      setPerson({ name: 'Sumit' });
-    }, 2000);
-    // try {
-    //   const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    //   setData((prev) => response.data)
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    setLoad(true);
+    try {
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      setLoad(false);
+      setData((prev) => response.data)
+    } catch (err) {
+
+      setLoad(false);
+      setErr(err.message);
+
+    }
   }
 
   useEffect(() => {
     getData();
   }, []);
 
-  console.log(person);
+  if (load) {
+    return <h1>Loading.....</h1>
+  }
+
+  if (err) {
+    return <h1>{err}</h1>
+  }
+
+
 
 
   return (
-    <div>
-      {/* "?" = data na aaye samma ko lagi "2000ms"safety. */}
-      <h1>{person?.name}</h1>
+    <div className='p-4'>
+      {data && data.map((post) => {
+        return <div key={post.id}>
+          <h1>Title : {post.title}</h1>
+          <p>Body : {post.body}</p>
+          <hr className='h-10' />
 
-       {/* Conditional Rendering
-      <h1>{person && person.name}</h1> */}
+        </div>
+      })}
 
-      {/* Cannot use this because the value is undefined for 2000ms and browser crashes.
-      <h1>{person.name}</h1>  */}
     </div>
   )
 }
