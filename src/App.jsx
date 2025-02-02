@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import Home from './pages/Home'
 import About from './pages/About'
 import RootLayout from './components/RootLayout'
+import ItemList from './pages/ItemList'
 
 const App = () => {
 
@@ -20,7 +21,11 @@ const App = () => {
         {
           path: 'about', 
           element: <About />
-        }
+        },
+        {
+          path: 'category-items/:label', 
+          element: <ItemList />
+        },
       ]
     }
   ]);

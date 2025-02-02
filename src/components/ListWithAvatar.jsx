@@ -6,15 +6,19 @@ import {
   Card,
   Typography,
 } from "@material-tailwind/react";
+import { useNavigate } from "react-router";
  
 export function ListWithAvatar({categories}) {
-  console.log(categories)
+  const nav = useNavigate();
+  // console.log(categories)
   return (
     <Card className="max-w-[900px]">
       <List>
 
         {categories.map((cat) => {
-          return <ListItem key={cat.idCategory}>
+          return <ListItem 
+          onClick={() => nav(`/category-items/${cat.strCategory}`)}
+          key={cat.idCategory}>
               
             <Avatar
              className="mr-5"
