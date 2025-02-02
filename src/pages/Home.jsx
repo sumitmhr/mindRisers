@@ -1,34 +1,32 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useTransition } from 'react'
 
 const Home = () => {
 
   const [data, setData] = useState();
-  const [load, setLoad] = useState(false);
   const [err, setErr] = useState();
+  const [isPending, startTransition] = useTransition();
 
+  const getData = () => {
 
+    startTransition(async () => {
+      try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        setData((prev) => response.data)
+      } catch (err) {
+        setErr(err.message);
 
+      }
+    })
 
-  const getData = async () => {
-    setLoad(true);
-    try {
-      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-      setLoad(false);
-      setData((prev) => response.data)
-    } catch (err) {
-
-      setLoad(false);
-      setErr(err.message);
-
-    }
   }
+
 
   useEffect(() => {
     getData();
   }, []);
 
-  if (load) {
+  if (isPending) {
     return <h1>Loading.....</h1>
   }
 
@@ -43,8 +41,8 @@ const Home = () => {
     <div className='p-4'>
       {data && data.map((post) => {
         return <div key={post.id}>
-          <h1>Title : {post.title}</h1>
-          <p>Body : {post.body}</p>
+          <h1>{post.title}</h1>
+          <p>{post.body}</p>
           <hr className='h-10' />
 
         </div>
