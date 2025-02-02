@@ -1,28 +1,43 @@
-import React from 'react'
-import { movies } from '../data/data'
+import { Button } from '@material-tailwind/react';
+import React, { useRef } from 'react'
 
 const Home = () => {
 
 
+  const per = useRef();
+  const vid = useRef();
+
+  const handleRef = () => {
+    per.current.focus();
+    per.current.style.backgroundColor = "red";
+    vid.current.play();
+  }
+
+
+
   return (
-    <div className='grid grid-cols-4 gap-4 p-5'>
+    <div className='p-5'>
 
-      {
-        movies.results.map(({ name, id, poster_path, overview, vote_average, backdrop_path, }) => {
-
-          return <div key={id}>
-            <img
+      <video
+        ref={vid}
+        className='h-[200px]' controls src="https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"></video>
 
 
-              src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="" />
 
-          </div>
 
-        })
-      }
+      <input
+        ref={per}
+        type="text" className='b border-2' placeholder='username' />
+
+      <br />
+      <br />
+
+
+
+      <Button onClick={handleRef}>Focus It</Button>
 
     </div>
   )
 }
 
-export default Home;
+export default Home
