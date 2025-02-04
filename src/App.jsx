@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import RootLayout from './components/RootLayout'
 import ItemList from './pages/ItemList'
+import ItemsDetail from './pages/ItemsDetail'
 
 const App = () => {
 
@@ -25,6 +26,10 @@ const App = () => {
         {
           path: 'category-items/:label', 
           element: <ItemList />
+        },
+        {
+          path: 'item-detail/:id', 
+          element: <ItemsDetail />
         },
       ]
     }

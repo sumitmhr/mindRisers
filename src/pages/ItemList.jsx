@@ -1,7 +1,7 @@
 import { Typography } from '@material-tailwind/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 
 const ItemList = () => {
 
@@ -9,6 +9,7 @@ const ItemList = () => {
   const [data,setData] = useState();
   const [load,setLoad] = useState(false);
   const [err,setErr] = useState();
+  const nav = useNavigate();
 
 
 
@@ -41,12 +42,14 @@ const ItemList = () => {
   }
 
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className='grid grid-cols-1 gap-4 p-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
      {data && data.meals.map((meal) => {
-      return <div key = {meal.idMeal}>
+      return <div 
+      key = {meal.idMeal} 
+      onClick = {() => nav(`/item-detail/${meal.idMeal}`)} className='shadow-2xl cursor-pointer'>
         <img className='w-full' src={meal.strMealThumb} alt={meal.strMeal} />
         <Typography 
           variant='h5' 
