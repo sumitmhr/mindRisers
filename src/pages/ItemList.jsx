@@ -3,6 +3,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { useApi } from '../custom-hooks/apiHooks';
+import Loading from '../components/Loading';
+import Error from '../components/Error';
 
 const ItemList = () => {
 
@@ -12,11 +14,11 @@ const ItemList = () => {
 
 
   if (load) {
-    return <h1 className="text-center text-2xl font-bold mt-10">Loading.....</h1>;
+    return <Loading />;
   }
 
   if (err) {
-    return <h1 className="text-center text-2xl font-bold text-red-500 mt-10">{err}</h1>;
+    return <Error/>;
   }
 
 

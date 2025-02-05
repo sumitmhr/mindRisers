@@ -1,4 +1,6 @@
+import Error from '../components/Error';
 import { ListWithAvatar } from '../components/ListWithAvatar';
+import Loading from '../components/Loading';
 import { useApi } from '../custom-hooks/apiHooks';
 
 const Home = () => {
@@ -8,11 +10,11 @@ const Home = () => {
 
 
   if (load) {
-    return <h1 className="text-center text-2xl font-bold mt-10">Loading.....</h1>;
+    return <Loading />;
   }
 
   if (err) {
-    return <h1 className="text-center text-2xl font-bold text-red-500 mt-10">{err}</h1>;
+    return <Error />;
   }
 
 
