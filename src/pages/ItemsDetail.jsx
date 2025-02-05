@@ -2,32 +2,12 @@ import { Typography } from '@material-tailwind/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { useApi } from '../custom-hooks/apiHooks';
 
 const ItemsDetail = () => {
   const { id } = useParams();
-  const [data, setData] = useState();
-  const [load, setLoad] = useState(false);
-  const [err, setErr] = useState();
+  const [load, data, err] = useApi('lookup.php', {i : id})
 
-  const getData = async () => {
-    setLoad(true);
-    try {
-      const response = await axios.get('https://www.themealdb.com/api/json/v1/1/lookup.php', {
-        params: {
-          i: id,
-        },
-      });
-      setLoad(false);
-      setData(response.data);
-    } catch (err) {
-      setLoad(false);
-      setErr(err.message);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   if (load) {
     return <h1 className="text-center text-2xl font-bold mt-10">Loading.....</h1>;
@@ -86,7 +66,7 @@ const ItemsDetail = () => {
                 Object.keys(meal).map((mealKey, index) => {
                   if (mealKey.startsWith('strMeasure')) {
                   // console.log(meal[mealKey]);
-                    if (meal[mealKey].trim())
+                    if (meal[mealKey]?.trim())
                     return <h1 key={mealKey}>{mealKey.substring(10)}. {meal[mealKey]}</h1>
                   }
                 })

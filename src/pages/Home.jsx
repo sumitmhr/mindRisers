@@ -1,50 +1,30 @@
-import axios from 'axios'
-import React, { useEffect, useState, useTransition } from 'react'
 import { ListWithAvatar } from '../components/ListWithAvatar';
+import { useApi } from '../custom-hooks/apiHooks';
 
 const Home = () => {
 
-  const [data, setData] = useState();
-  const [err, setErr] = useState();
-  const [isPending, startTransition] = useTransition();
-
-  const getData = () => {
-
-    startTransition(async () => {
-      try {
-        const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
-        setData((prev) => response.data)
-      } catch (err) {
-        setErr(err.message);
-
-      }
-    })
-
-  }
+  const [load, data, err] = useApi('categories.php')
 
 
-  useEffect(() => {
-    getData();
-  }, []);
 
-  if (isPending) {
-    return <h1>Loading.....</h1>
+  if (load) {
+    return <h1 className="text-center text-2xl font-bold mt-10">Loading.....</h1>;
   }
 
   if (err) {
-    return <h1>{err}</h1>
+    return <h1 className="text-center text-2xl font-bold text-red-500 mt-10">{err}</h1>;
   }
 
-  console.log(data);
 
 
   return (
     <div className='p-4'>
-    
-      {data && <ListWithAvatar categories = {data.categories} />}
+
+      {data && <ListWithAvatar categories={data.categories} />}
+
 
     </div>
   )
 }
 
-export default Home
+export default Home;

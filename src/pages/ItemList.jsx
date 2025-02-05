@@ -2,43 +2,21 @@ import { Typography } from '@material-tailwind/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
+import { useApi } from '../custom-hooks/apiHooks';
 
 const ItemList = () => {
 
   const {label} = useParams();
-  const [data,setData] = useState();
-  const [load,setLoad] = useState(false);
-  const [err,setErr] = useState();
+  const [load, data, err] = useApi('filter.php', {c : label})
   const nav = useNavigate();
 
 
-
-  const getData = async () => {
-    setLoad(true);
-    try {
-      const response = await axios.get('https://www.themealdb.com/api/json/v1/1/filter.php', {
-        params: {
-          c: label
-        }
-      });
-      setLoad(false);
-      setData(response.data);
-    } catch (err) {
-      setLoad(false);
-      setErr(err.message);
-    }
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   if (load) {
-    return <h1>Loading.....</h1>
+    return <h1 className="text-center text-2xl font-bold mt-10">Loading.....</h1>;
   }
 
   if (err) {
-    return <h1>{err}</h1>
+    return <h1 className="text-center text-2xl font-bold text-red-500 mt-10">{err}</h1>;
   }
 
 
