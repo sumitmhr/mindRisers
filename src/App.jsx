@@ -5,6 +5,7 @@ import About from './pages/About'
 import RootLayout from './components/RootLayout'
 import ItemList from './pages/ItemList'
 import ItemsDetail from './pages/ItemsDetail'
+import AddForm from './pages/AddForm'
 
 const App = () => {
 
@@ -30,6 +31,10 @@ const App = () => {
         {
           path: 'item-detail/:id', 
           element: <ItemsDetail />
+        },
+        {
+          path: 'add-form', 
+          element: <AddForm />
         },
       ]
     }
