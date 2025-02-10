@@ -2,8 +2,13 @@ import { Button, Checkbox, Input, Option, Radio, Rating, Select, Switch, Textare
 import { Field, Formik } from 'formik'
 import React from 'react'
 import { useNavigate } from 'react-router'
+import { addBlog } from '../redux/blogSlice'
+import { nanoid } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux'
+import { valSchema } from '../utils/validator'
 
 const AddForm = () => {
+  const dispatch = useDispatch();
   const nav = useNavigate();
   return (
     <div className='p-5 max-w-[400px]'>
@@ -15,18 +20,25 @@ const AddForm = () => {
           locate: '',
           genres: [],
           country: '',
-          imageReview: '',
-          isOn: false,
+          // imageReview: '',
+          // isOn: false,
         }}
 
         onSubmit={(values, { resetForm, setValues }) => {
-          alert(`Switch is ${values.isOn ? "ON" : "OFF"}`);
+
+          dispatch(addBlog({
+            ...values,
+            id: nanoid(),
+          }));
+          // alert(`Switch is ${values.isOn ? "ON" : "OFF"}`);
           // console.log(val);
 
-          //resetForm();
-          // nav(-1);
+          resetForm();
+          nav(-1);
 
         }}
+
+        validationSchema={valSchema}
       >
 
         {({ handleChange, values, errors, touched, handleSubmit, setFieldValue }) => (
@@ -40,6 +52,7 @@ const AddForm = () => {
                 label='Title'
                 placeholder='Title Here'
               />
+              {errors.title &&  touched.title && <p className='text-red-400'>{errors.title}</p>}
             </div>
 
             <div>
@@ -48,6 +61,7 @@ const AddForm = () => {
                 <Radio label='Indoor' name='locate' onChange={handleChange} value={'indoor'} color='green' />
                 <Radio label='Outdoor' onChange={handleChange} name='locate' value={'outdoor'} color='red' />
               </div>
+              {errors.locate && touched.locate && <p className='text-red-400'>{errors.locate}</p>}
             </div>
 
             <div>
@@ -57,6 +71,7 @@ const AddForm = () => {
                 <Checkbox label='Comedy' onChange={handleChange} name='genres' value={'comedy'} />
                 <Checkbox label='Drama' onChange={handleChange} name='genres' value={'drama'} />
               </div>
+              {errors.genres && touched.genres && <p className='text-red-400'>{errors.genres}</p>}
             </div>
 
             <div>
@@ -68,11 +83,12 @@ const AddForm = () => {
                 <Option value='China'>China</Option>
                 <Option value='India'>India</Option>
              </Select>
+             {errors.country && touched.country && <p className='text-red-400'>{errors.country}</p>}
             </div>
              
 
              {/* Switch Field */}
-            <div>
+            {/* <div>
               <label>Enable Feature</label>
                 <Field name = "isOn">
                   {({ field }) => (
@@ -84,12 +100,12 @@ const AddForm = () => {
                     />
                   )}
                 </Field>
-            </div>
+            </div> */}
 
             {/* Display Current State */}
-            <p>
+            {/* <p>
               Switch is <span>{values.isOn ? "ON" : "OFF"}</span>
-            </p>
+            </p> */}
 
             {/* Submit Button */}
             {/* <button
@@ -99,14 +115,14 @@ const AddForm = () => {
               Submit
             </button> */}
 
-            <div>
+            {/* <div>
               <h1>Rating: </h1><Rating unratedColor='amber' ratedColor='amber' value={4} /> 
               <h1>Rating: </h1><Rating unratedColor='red' ratedColor='red' value={2} /> 
               <h1>Rating: </h1><Rating unratedColor='blue' ratedColor='blue' value={1} /> 
               <h1>Rating: </h1><Rating unratedColor='green' ratedColor='green' value={5} /> 
-            </div>
+            </div> */}
 
-            <div>
+            {/* <div>
               <Input
               onChange={(e) => {
                 const file = e.target.files[0];
@@ -122,7 +138,7 @@ const AddForm = () => {
               alt=''
               />
               }
-            </div>
+            </div> */}
 
             <div>
               <Textarea
@@ -132,6 +148,7 @@ const AddForm = () => {
                 label='Detail'
                 // placeholder='Details Here'
               />
+              {errors.detail && touched.detail && <p className='text-red-400'>{errors.detail}</p>}
             </div>
 
             <Button type='submit'>Submit</Button>
